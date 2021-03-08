@@ -26,7 +26,7 @@ This theme is maintained by the following person(s) and a bunch of [awesome cont
 | --- |
 | [Rafael Lopes](https://github.com/RaphGL) |
 
-| [![Darren Davison](https://avatars.githubusercontent.com/u/591251?s=400)](https://github.com/davison) |
+| [![Darren Davison](https://avatars.githubusercontent.com/u/591251?s=70)](https://github.com/davison) |
 | --- |
 | [Darren Davison](https://github.com/davison)
 
