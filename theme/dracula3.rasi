@@ -74,7 +74,7 @@
 }
 
 #window {
-    border:             1px;
+    border:             2px;
     padding:            5px;
     location:           center;
     anchor:             center;
