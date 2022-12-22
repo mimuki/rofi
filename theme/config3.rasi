@@ -2,15 +2,18 @@
  * ROFI Color theme
  * User: mimuki
  *******************************************************************************/
+/* for file browser to be roughly the same size as other modes*/
+/* make your shortcut for it be:*/
+/* rofi -show filebrowser -theme-str '#listview {lines:8;}' */
 
 /* GLOBAL PROPERTIES */
 /* NOTE : these properties are inherited for all "named" elements below */
 * {
-    /* Dracula palette */ 
+    /* Dracula palette */
 
         red:                            #FF5555;
         purple:                         #BD93F9;
-        green:                          #50FA7B; 
+        green:                          #50FA7B;
         blue:                           #6272A4;
         orange:                         #FFB86C;
         pink:                           #FF79C6;
@@ -23,13 +26,12 @@
         bgdark:                         #21222C;
 
         selection:                      #44475A;
-
-        comment:                        @blue;
+        comment:                        #6272a4;
 
     /* ROFI */
 
-        background-color:               @normal-background;
-        text-color:                     @normal-foreground;
+        background-color:               @bg;
+        text-color:                     @fg;
 
         // normal state
 
@@ -44,7 +46,7 @@
 
         // active state
 
-        active-foreground:              @purple; 
+        active-foreground:              @purple;
         active-background:              @bgdark;
 
         alternate-active-foreground:    @active-foreground;
@@ -74,7 +76,7 @@
 }
 
 #window {
-    border:             5px;
+    border:             8px;
     padding:            0px;
     location:           center;
     anchor:             center;
@@ -83,32 +85,43 @@
     x-offset:           0;
     y-offset:           0;
     font: 		"TerminessTTF Nerd Font 16";
+
 }
 
 #scrollbar {
     handle-width:       6px;
-    handle-color:       @selection; 
+    handle-color:       @selection;
     padding:            1px;
 }
 
+
 #mainbox {
-    padding:		2px;
+    padding:		0px;
 }
 
 #message {
-    border:             1px solid 0px 0px;
-    padding:            1px;
+    border:             0px solid 0px 0px;
+    padding:            0px 8px 8px 8px;
+    border-color: @bg;
+
 }
 
 #textbox {
+    text-color: @fg;
+    background-color: @selection;
+    padding: 10px 15px;
+    border: 8px;
+    border-color: @comment;
+
 }
 
 #listview {
     columns:            1;
     fixed-height:       true;
-    border:             1px solid 0px 0px;
+    border:             0px solid 0px 0px;
+    border-color:       @pink;
     dynamic:            true;
-    scrollbar:          true;
+    scrollbar:          false;
     cycle:              true;
     spacing:            1px;
     padding:            2px 0px 0px;
@@ -116,8 +129,9 @@
     orientation:        vertical;
 }
 
+
 #element {
-    padding:            1px;
+    padding:            2px 15px;
 }
 
 #element.normal.normal {
@@ -134,8 +148,8 @@
 }
 
 #element.selected.normal {
-    background-color:   @selected-normal-background;
-    text-color:         @selected-normal-foreground;
+    background-color:   @pink;
+    text-color:         @bg;
 }
 
 #element.selected.urgent {
@@ -170,6 +184,7 @@
 #button.selected {
     background-color:   @selected-normal-background;
     text-color:         @selected-normal-foreground;
+
 }
 
 #case-indicator {
@@ -177,6 +192,8 @@
 }
 
 #entry {
+    text-color:   @fg;
+
 }
 
 #prompt {
@@ -185,11 +202,12 @@
 
 #inputbar {
     children:           [prompt, textbox-prompt-colon, entry, case-indicator];
-    padding:            1px;
+    padding:            20px;
+
 }
 
 #textbox-prompt-colon {
     expand:             false;
-    str:                " > ";
+    str:                " ";
     text-color:         @purple;
 }
